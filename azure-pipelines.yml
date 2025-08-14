@@ -12,7 +12,11 @@ pool:
 steps:
 - task: UseRubyVersion@0
   inputs:
-    versionSpec: '>= 2.7'
+    versionSpec: '>= 3.3'
+  displayName: 'Set Ruby version'
+
+- script: gem install rails && rails -v
+  displayName: 'Install Rails'
 
 - script: |
     gem install bundler
